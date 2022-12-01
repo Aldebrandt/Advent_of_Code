@@ -8,3 +8,6 @@ If you clone the repository you have to add an Interpreter yourself before runni
 
 
 Feel free commenting my code and feel free to leave a suggestion and comment or two.
+
+> Please keep in mind to change the datafrom the repective data files to the data from your challenge input site. 
+> Otherwise your Result could vary and your Solution could be wrong.
