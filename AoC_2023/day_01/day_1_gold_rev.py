@@ -54,13 +54,42 @@ for line in line_list:
     number_list = []
     find_digits(line, digits)
 
+    index = []
+    check_for_written_digits(line, index)
+
     if not digits:
-        index = []
-        check_for_written_digits(line, index)
         determine_index(index, search_highest=False)
         determine_index(index)
         number_pair.append(number_list)
     else:
-        print()
+        first_digit = line.find(str(digits[0]))
+        last_digit = line.rfind(str(digits[-1]))
+        string_before_first_digit = line[:first_digit]
+        string_after_last_digit = line[last_digit + 1:]
 
-    print(number_pair)
+        # print(len(string_before_first_digit), len(string_after_last_digit))
+        # print(line, string_before_first_digit, string_after_last_digit)
+        # print(digits, first_digit, last_digit)
+
+        if len(string_before_first_digit) == 0:
+            number_list.append(digits[0])
+        else:
+            determine_index(index, search_highest=False)
+
+        if len(string_after_last_digit) == 0:
+            number_list.append(digits[-1])
+        else:
+            determine_index(index, search_highest=True)
+
+        number_pair.append(number_list)
+
+print(number_pair)
+
+for number in number_pair:
+    if len(number) == 1:
+        number[0] = int(f"{number[0]}{number[0]}")
+    else:
+        number[0] = int(f"{number[0]}{number[-1]}")
+    final_numbers.append(number[0])
+
+print(sum(final_numbers))
