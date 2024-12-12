@@ -104,10 +104,7 @@ for line in lines:
 print(numbers)
 
 for number in numbers:
-    if len(number) == 1:
-        number[0] = int(f"{number[0]}{number[0]}")
-    else:
-        number[0] = int(f"{number[0]}{number[-1]}")
+    number[0] = int(f"{number[0]}{number[-1]}")
     final_numbers.append(number[0])
 
 print(f"final numbers: {final_numbers}")

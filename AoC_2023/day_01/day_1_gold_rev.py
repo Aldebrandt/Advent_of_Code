@@ -1,4 +1,4 @@
-data_input = open("day_1_data_test.txt", "r")
+data_input = open("day_1_data.txt", "r")
 line_list = [line.strip() for line in data_input.readlines()]
 number_pair = []
 final_numbers = []
@@ -67,10 +67,6 @@ for line in line_list:
         string_before_first_digit = line[:first_digit]
         string_after_last_digit = line[last_digit + 1:]
 
-        # print(len(string_before_first_digit), len(string_after_last_digit))
-        # print(line, string_before_first_digit, string_after_last_digit)
-        # print(digits, first_digit, last_digit)
-
         if len(string_before_first_digit) == 0:
             number_list.append(digits[0])
         else:
@@ -86,10 +82,7 @@ for line in line_list:
 print(number_pair)
 
 for number in number_pair:
-    if len(number) == 1:
-        number[0] = int(f"{number[0]}{number[0]}")
-    else:
-        number[0] = int(f"{number[0]}{number[-1]}")
+    number[0] = int(f"{number[0]}{number[-1]}")
     final_numbers.append(number[0])
 
 print(sum(final_numbers))

@@ -11,10 +11,7 @@ for line in lines:
     numbers.append(num_list)
 
 for number in numbers:
-    if len(number) == 1:
-        number[0] = int(f"{number[0]}{number[0]}")
-    else:
-        number[0] = int(f"{number[0]}{number[-1]}")
+    number[0] = int(f"{number[0]}{number[-1]}")
     final_numbers.append(number[0])
 
 print(numbers)
